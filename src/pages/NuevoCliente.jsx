@@ -33,6 +33,7 @@ export async function action({request}) {
   return redirect('/')
 }
 
+
 const NuevoCliente = () => {
 
   const errores = useActionData();
@@ -53,7 +54,7 @@ const NuevoCliente = () => {
 
     <div className="bg-white shadow rounded-md md:w-3/4 mx-auto px-5 py-10 mt-10">
    
-   {errores?.length && errores.map((error, i) => <Error key={i}>{error}</Error> )}
+   {errores?.map((error, i) => <Error key={i}>{error}</Error> )}
   <Form
      method="post"
      noValidate
