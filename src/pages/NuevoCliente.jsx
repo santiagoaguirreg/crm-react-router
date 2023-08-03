@@ -26,6 +26,7 @@ export async function action({request}) {
 
   if(Object.keys(errores).length) {
     return errores;
+    
   }
 
  await  agregarCliente(datos)
