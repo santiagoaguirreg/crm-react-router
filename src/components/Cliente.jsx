@@ -4,6 +4,8 @@ import { eliminarCliente } from '../data/clientes'
 
 export async function action({params}) {
 
+  console.log(params)
+
   await eliminarCliente(params.clienteId)
   return redirect('/')
 }
@@ -28,7 +30,7 @@ const Cliente = ({cliente}) => {
     <p className='text-gray-600'><span className='text-gray-800 uppercase font-bold'>Tel: </span>{cliente.telefono}</p>
     </td>
 
-    <td className='p-6 flex gap-3'>
+    <td className='p-6  my-4 flex gap-2'>
       <button
         type='button'
         className='text-blue-600 hover:text-blue-700 uppercase font-bold text-xs'
@@ -41,6 +43,7 @@ const Cliente = ({cliente}) => {
     <Form
       method='post'
       action={`clientes/${id}/eliminar`}
+      className='flex'
       onSubmit={(e) => {
         if(!confirm('¿Deseas eliminar este registro?')) {
           e.preventDefault()
